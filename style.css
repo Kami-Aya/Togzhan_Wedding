@@ -398,19 +398,98 @@ body {
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
+/* --- 8. АДАПТИВТІЛІК (RESPONSIVE DESIGN) --- */
 
-/* 8. Адаптивтілік (Mobile) */
-@media (max-width: 600px) {
-    .radio-group { flex-direction: column; }
-    .rsvp-container { padding: 30px 15px; margin: 0 10px; }
-    .rsvp-subtitle { font-size: 1.6rem; }
+/* 1. Планшеттер мен орташа экрандар (max-width: 992px) */
+@media (max-width: 992px) {
+    .content-text {
+        max-width: 90%;
+        font-size: 1.3rem;
+    }
+    .overlay-card {
+        max-width: 95%;
+        padding: 40px 15px;
+    }
 }
 
-/* 8. Адаптивтілік (Mobile) */
+/* 2. Мобильді телефондар (max-width: 600px) */
 @media (max-width: 600px) {
-    .content-text { font-size: 1.2rem; }
-    .main-heading { font-size: 1.8rem; }
-    .timer-box { width: 65px; height: 65px; }
-    .timer-box span { font-size: 1.6rem !important; }
-    .timer-title-main { font-size: 2.2rem; }
+    /* Hero Section */
+    .hero h1 {
+        font-size: clamp(3.5rem, 18vw, 5rem); /* Мәтін экраннан шығып кетпейді */
+    }
+    .hero-label {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    .date-badge {
+        font-size: 1.5rem;
+    }
+
+    /* Шақыру мәтіндері */
+    .title-script, .main-heading, .timer-title-main, .calendar-title-main {
+        font-size: 2rem; /* Тым үлкен тақырыптарды кішірейту */
+    }
+    .hosts, .address {
+        font-size: 1.4rem;
+    }
+    .content-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* Таймер */
+    .timer-grid {
+        gap: 8px; /* Арақашықтықты азайту */
+    }
+    .timer-box {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+    }
+    .timer-box span {
+        font-size: 1.4rem !important;
+    }
+    .timer-item label {
+        font-size: 0.7rem;
+    }
+
+    /* RSVP (Форма) */
+    .radio-group {
+        flex-direction: column; /* Батырмалар бірінің астына бірі тұрады */
+        gap: 10px;
+    }
+    .radio-label {
+        width: 100%;
+        padding: 15px;
+    }
+    .submit-btn {
+        width: 100%; /* Батырма толық енді алады */
+        padding: 15px 20px;
+    }
+
+    /* Музыка батырмасы */
+    .music-control {
+        width: 140px;
+        height: 140px;
+        bottom: 20px;
+    }
+    .play-btn {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* 3. Өте кішкентай экрандар (max-width: 380px) */
+@media (max-width: 380px) {
+    .calendar-grid {
+        gap: 8px;
+    }
+    .calendar-grid span {
+        font-size: 0.9rem;
+        height: 35px;
+    }
+    .day-name {
+        font-size: 1.1rem;
+    }
 }
