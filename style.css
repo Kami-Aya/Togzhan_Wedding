@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(255, 252, 248, 0.6), rgba(255, 252, 248, 0.6)), 
-                url('img/1-бет.jpg');
+                url('img/1.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -101,7 +101,7 @@ body {
 
 /* 4. Шақыру контейнерлері */
 .invitation-container {
-    background-image: url('img/2-бет.jpg'); 
+    background-image: url('img/2.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -272,7 +272,7 @@ body {
     padding: 80px 20px;
     /* Сурет жолын тексеріп алыңыз */
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('img/2-бет.jpg'); 
+                url('img/2.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -493,3 +493,4 @@ body {
         font-size: 1.1rem;
     }
 }
+
