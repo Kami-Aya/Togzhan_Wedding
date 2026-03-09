@@ -1,0 +1,416 @@
+/* 1. Жалпы стильдер */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #fdfaf6; 
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* 2. Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255, 252, 248, 0.6), rgba(255, 252, 248, 0.6)), 
+                url('img/1-бет.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-label { 
+    letter-spacing: 4px; 
+    text-transform: uppercase; 
+    margin-bottom: 10px; 
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: 'Marck Script', cursive;
+    font-size: clamp(5rem, 14vw, 8rem);
+    color: #8d735b;
+    margin: 5px 0;
+}
+
+.date-badge {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    border-top: 1px solid #b8926a;
+    border-bottom: 1px solid #b8926a;
+    padding: 8px 18px;
+    display: inline-block;
+    color: #8d735b;
+}
+
+/* 3. Музыка блогы */
+.music-control {
+    position: absolute;
+    bottom: 40px;
+    width: 180px; /* Контейнерді мәтін сыймауы үшін үлкейттік */
+    height: 180px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.music-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 8s linear infinite; /* Айналу жылдамдығы */
+}
+
+.music-text text {
+    fill: #8d735b !important; /* Суреттегідей қоңыр түс */
+    font-size: 9px; /* Мәтін анық көрінуі үшін */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.play-btn {
+    background: #8d735b;
+    width: 70px; /* Ортадағы қоңыр шеңбердің өлшемі */
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 15;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes rotateText { 
+    from { transform: rotate(0deg); } 
+    to { transform: rotate(360deg); } 
+}
+
+/* 4. Шақыру контейнерлері */
+.invitation-container {
+    background-image: url('img/2-бет.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.overlay-card {
+    background-color: rgba(255, 255, 255, 0.85); /* Ақ, жартылай мөлдір фон */
+    width: 100%;             /* Экранның толық енін алады */
+    max-width: 80%;         /* Шектеуді алып тастаймыз */
+    padding: 50px 20px;      /* Үсті-астына көбірек орын */
+    text-align: center;
+    box-shadow: none;        /* Суретте көлеңке жоқ, сондықтан алып тастадық */
+    
+    /* Егер шетіне тиіп тұруын қаласаңыз: */
+    margin: 0; 
+    border-radius: 0;        /* Бұрыштарын түзу қылу */
+}
+
+/* Суреттегідей тақырыптар стилі */
+.title-script, .main-heading {
+    font-family: 'Marck Script', cursive;
+    font-size: 2.8rem;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.hosts, .address {
+    font-family: 'Marck Script', sans-serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: #000;
+}
+
+/* 2GIS батырмасы суреттегідей ақ фон, қара жиек */
+.gis-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.gis-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 5. Мәтін мен Толқын (Wave) */
+.wave-overlay {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    padding: 60px 15px;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 100%);
+}
+
+.content-text {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+.content-text p { margin-bottom: 15px; }
+.content-text strong { color: #8d735b; font-size: 1.7rem; }
+
+.ornament { font-size: 1.5rem; color: #8d735b; margin: 10px 0; }
+
+/* 6. Таймер бөлімі */
+.timer-section { 
+    padding: 60px 20px; 
+    text-align: center; 
+    /* Ақ фонды алып тастап, негізгі молочный түсті қоямыз */
+    background-color: #fdfaf6; 
+}
+
+.timer-title-main, .calendar-title-main {
+    font-family: 'Marck Script', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.timer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.timer-box {
+    background-color: #7c2d12;
+    width: 75px;
+    height: 75px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.timer-box span {
+    color: white !important;
+    font-size: 2rem !important;
+    font-weight: bold;
+}
+
+.timer-item label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+/* 7. Күнтізбе бөлімі */
+.calendar-section {
+    padding: 40px 20px;
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fdfaf6; /* Екеуі бірдей болуы үшін */
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.day-name {
+    font-family: 'Marck Script', cursive;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.event-day {
+    position: relative;
+    font-weight: bold;
+}
+
+.event-day::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38px;
+    height: 38px;
+    border: 2px solid #e11d48;
+    border-radius: 50%;
+}
+
+
+/* 7. RSVP (Келемін/Келмеймін) бөлімі */
+.rsvp-section {
+    padding: 80px 20px;
+    /* Сурет жолын тексеріп алыңыз */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('img/2-бет.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+}
+
+.rsvp-container {
+    max-width: 500px;
+    margin: 0 auto;
+    /* Карточка эффектілері толығымен жойылды */
+    background: none;           
+    backdrop-filter: none;      
+    border: none;               
+    padding: 20px;
+    border-radius: 0;           
+}
+
+.title-script, 
+.rsvp-subtitle, 
+.input-group label {
+    color: white;
+    /* Фондағы суретпен араласып кетпеуі үшін көлеңке */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+}
+
+.rsvp-subtitle {
+    font-family: 'Marck Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Есім жазатын және адам санын жазатын инпуттар */
+.input-group input[type="text"],
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95); /* Сәл қоюлау ақ түс */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Радио батырмалар (Келемін/Келмеймін) стилі */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-label {
+    flex: 1;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #fff;
+}
+
+.radio-label:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Таңдалған батырманың стилі */
+.radio-label:has(input[type="radio"]:checked) {
+    background: #8d735b; 
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+/* Жіберу батырмасы */
+.submit-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.4s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.submit-btn:hover {
+    background-color: #8d735b;
+    color: white;
+}
+
+.status-msg {
+    margin-top: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* 8. Адаптивтілік (Mobile) */
+@media (max-width: 600px) {
+    .radio-group { flex-direction: column; }
+    .rsvp-container { padding: 30px 15px; margin: 0 10px; }
+    .rsvp-subtitle { font-size: 1.6rem; }
+}
+
+/* 8. Адаптивтілік (Mobile) */
+@media (max-width: 600px) {
+    .content-text { font-size: 1.2rem; }
+    .main-heading { font-size: 1.8rem; }
+    .timer-box { width: 65px; height: 65px; }
+    .timer-box span { font-size: 1.6rem !important; }
+    .timer-title-main { font-size: 2.2rem; }
+}
