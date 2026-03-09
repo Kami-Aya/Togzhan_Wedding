@@ -19,12 +19,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(255, 252, 248, 0.6), rgba(255, 252, 248, 0.6)), 
-                url('../img/1.jpg');
+    /* Суреттің жолы мен градиенті */
+    background: linear-gradient(rgba(255, 252, 248, 0.4), rgba(255, 252, 248, 0.4)), 
+                url('img/1-бет.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    /* МЫНА ЖЕРГЕ НАЗАР АУДАР: */
+    background-attachment: scroll; /* Басында scroll болсын */
     text-align: center;
     position: relative;
+    width: 100%;
 }
 
 .hero-label { 
@@ -398,7 +403,19 @@ body {
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
-/* --- 8. АДАПТИВТІЛІК (RESPONSIVE DESIGN) --- */
+/* --- 8. АДАПТИВТІЛІК ЖӘНЕ ҚАТЕЛЕРДІ ТҮЗЕТУ (RESPONSIVE & BUG FIX) --- */
+
+/* Алдымен Hero-дағы сурет мәселесін шешеміз */
+.hero {
+    background-attachment: scroll; /* Телефондар үшін қалыпты күй */
+}
+
+/* Тек үлкен экрандарда (ноутбук/компьютер) ғана "fixed" эффектісін қосамыз */
+@media (min-width: 1024px) {
+    .hero {
+        background-attachment: fixed;
+    }
+}
 
 /* 1. Планшеттер мен орташа экрандар (max-width: 992px) */
 @media (max-width: 992px) {
@@ -414,9 +431,9 @@ body {
 
 /* 2. Мобильді телефондар (max-width: 600px) */
 @media (max-width: 600px) {
-    /* Hero Section */
+    /* Hero Section - бірінші бет */
     .hero h1 {
-        font-size: clamp(3.5rem, 18vw, 5rem); /* Мәтін экраннан шығып кетпейді */
+        font-size: clamp(3.5rem, 18vw, 5rem); 
     }
     .hero-label {
         font-size: 1.2rem;
@@ -428,7 +445,7 @@ body {
 
     /* Шақыру мәтіндері */
     .title-script, .main-heading, .timer-title-main, .calendar-title-main {
-        font-size: 2rem; /* Тым үлкен тақырыптарды кішірейту */
+        font-size: 2rem; 
     }
     .hosts, .address {
         font-size: 1.4rem;
@@ -440,7 +457,7 @@ body {
 
     /* Таймер */
     .timer-grid {
-        gap: 8px; /* Арақашықтықты азайту */
+        gap: 8px;
     }
     .timer-box {
         width: 60px;
@@ -456,7 +473,7 @@ body {
 
     /* RSVP (Форма) */
     .radio-group {
-        flex-direction: column; /* Батырмалар бірінің астына бірі тұрады */
+        flex-direction: column; 
         gap: 10px;
     }
     .radio-label {
@@ -464,7 +481,7 @@ body {
         padding: 15px;
     }
     .submit-btn {
-        width: 100%; /* Батырма толық енді алады */
+        width: 100%; 
         padding: 15px 20px;
     }
 
