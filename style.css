@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(255, 252, 248, 0.6), rgba(255, 252, 248, 0.6)), 
-                url('img/1.jpg');
+                url('../img/1.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -493,4 +493,5 @@ body {
         font-size: 1.1rem;
     }
 }
+
 
